@@ -1,0 +1,31 @@
+{% block navbar %}
+<style>
+    /* Estilos para la barra de navegación */
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        background-color: #007bff; /* Cambia este color por el que desees */
+        color: #ffffff; /* Cambia este color por el que desees */
+        padding: 10px;                                                     
+    }
+    
+    .nav a {
+        color: #ffffff;
+        text-decoration: none;
+        padding: 5px 10px;
+    }
+    
+    .nav a:hover {
+        background-color: #0056b3;
+        color: #ffffff;
+    }
+</style>
+<!-- base_templates/navbar.html -->
+<nav>
+    <a href="{% url 'index' %}">Inicio</a>
+    <a href="{% url 'mostrar_laboratorios' %}">Mostrar Laboratorios</a>
+    <a href="{% url 'agregar_laboratorio' %}">Agregar Laboratorio</a>
+
+</nav>
+
+{% endblock %}

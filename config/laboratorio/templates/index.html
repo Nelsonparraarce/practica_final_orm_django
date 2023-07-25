@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMULADOR PARA FABRICACIÓN DE PRODUCTOS FARMACÉUTICOS</title>
+    <style>
+        /* Estilos para centrar y fondo de color */
+        body {
+            background-color: #f0f0f0; /* Cambia este color por el que desees */
+            margin: 0;
+            padding: 0;
+        }
+
+
+        a:hover {
+            background-color: #0056b3;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 50px;
+            background-color: #ffffff; /* Cambia este color por el que desees */
+            border-radius: 10px;
+            margin: 20px auto; /* Añadimos un margen para centrar el contenido */
+        }
+
+        h1 {
+            color: #333333; /* Cambia este color por el que desees */
+        }
+
+        h2 {
+            color: #666666; /* Cambia este color por el que desees */
+        }
+
+
+        a {
+            text-decoration: none;
+            background-color: #007bff; /* Cambia este color por el que desees */
+            color: #ffffff; /* Cambia este color por el que desees */
+            padding: 10px 20px;
+            border-radius: 5px;
+  
+        }
+       
+
+    </style>
+
+</head>
+<body>
+    <div class="nav">
+        {% include 'navbar.html' %}
+    </div>
+    <div class="container">
+        <h1>SIMULADOR PARA FABRICACIÓN DE PRODUCTOS FARMACÉUTICOS</h1>
+
+        <h2>Laboratorios</h2>
+        <p>Aquí puedes encontrar una lista de laboratorios disponibles:</p>
+        <a href="{% url 'mostrar_laboratorios' %}">Ver Laboratorios</a>
+
+    </div>
+
+
+</body>
+</html>

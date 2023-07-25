@@ -1,0 +1,81 @@
+<!-- laboratorio/templates/eliminar_laboratorio.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Laboratorio</title>
+    <style>
+        /* Estilos para centrar y estilizar el contenido */
+        body {
+            background-color: #f0f0f0; /* Cambia este color por el que desees */
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            width: 80%; /* Ancho deseado para el formulario */
+            margin: 0 auto; /* Centra horizontalmente */
+            padding: 20px;
+            background-color: #ffffff; /* Cambia este color por el que desees */
+            border-radius: 10px;
+        }
+
+        p {
+            color: #dc3545; /* Color del texto de la alerta */
+            font-weight: bold;
+            text-align: center;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: #dc3545;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;     
+        }
+
+
+        a {
+            text-decoration: none;
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .centered-div {
+            text-align: center;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="nav">
+        {% include 'navbar.html' %}
+    </div>
+    <div class="form-container">
+        <p>¿Estás seguro de que deseas eliminar el laboratorio "{{ laboratorio.nombre }}"?</p>
+        <form method="post">
+            {% csrf_token %}
+            <input type="submit" value="Eliminar">
+        </form> 
+        &nbsp;
+        <div class="centered-div">
+          
+        <a href="{% url 'mostrar_laboratorios' %}">Retornar</a>    
+        </div>
+    </div>
+
+</body>
+</html>

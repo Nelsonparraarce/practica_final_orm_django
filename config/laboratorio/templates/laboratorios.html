@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Vehículos</title>
+    <style>
+        /* Estilos para centrar la tabla y agregar bordes */
+        body {
+            background-color: #f0f0f0; /* Cambia este color por el que desees */
+            margin: 0;
+            padding: 0;
+        }
+
+        .table-container {
+            width: 80%; /* Ancho deseado para la tabla */
+            margin: 0 auto; /* Centra horizontalmente */
+            padding: 20px;
+            background-color: #ffffff; /* Cambia este color por el que desees */
+            border-radius: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #dddddd; /* Color del borde de la tabla */
+        }
+
+        th, td {
+            text-align: center;
+            padding: 8px;
+            border: 1px solid #dddddd; /* Color del borde de las celdas */
+        }
+
+        th {
+            background-color: #f2f2f2; /* Color de fondo para las cabeceras */
+        }
+
+        a {
+            text-decoration: none;
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .centered-div {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="nav">
+        {% include 'navbar.html' %}
+    </div>
+
+    <div class="table-container"> 
+        <table class="table table-striped">
+            <thead>
+                <tr>        
+                    <th>Nombre</th>
+                    <th>Ciudad</th>
+                    <th>Pais</th>
+                    <th>Actualizar</th>       
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for laboratorio in laboratorios %}
+                <tr>
+                    <td>{{ laboratorio.nombre }}</td>
+                    <td>{{ laboratorio.ciudad }}</td>
+                    <td>{{ laboratorio.pais }}</td>   
+                    <td><a href="{% url 'editar_laboratorio' laboratorio.id %}">Actualizar</a></td>
+                    <td><a href="{% url 'eliminar_laboratorio' laboratorio.id %}">Eliminar</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <div class="centered-div">  
+            <p>¿Informacion de los laboratorios?</p>       
+            <a href="{% url 'index' %}">ir a la pagina de inicio</a>    
+        </div>
+    </div> 
+</body>
+</html>
